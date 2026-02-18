@@ -1,0 +1,174 @@
+/* Variables for easy theme management */
+:root {
+  --bg-color: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --primary-btn: #4f46e5;
+  --primary-hover: #4338ca;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Overrides */
+.dark-theme {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --input-bg: #334155;
+  --input-border: #475569;
+  --primary-btn: #6366f1;
+  --primary-hover: #818cf8;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.otp-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.otp-card {
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid var(--input-border);
+  transition: all 0.3s ease;
+}
+
+h2 {
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.otp-inputs-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.otp-field {
+  width: 45px;
+  height: 55px;
+  background-color: var(--input-bg);
+  border: 2px solid var(--input-border);
+  color: var(--text-primary);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: border-color 0.2s;
+}
+
+.otp-field:focus {
+  border-color: var(--primary-btn);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.verify-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-btn);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.verify-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.resend-link {
+  background: none;
+  border: none;
+  color: var(--primary-btn);
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.timer-text {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.error-toast { color: #f87171; font-size: 0.85rem; margin-top: 10px; }
+
+@media (max-width: 768px) {
+  .otp-card {
+    max-width: 90%;
+    padding: 30px 24px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .otp-page-wrapper {
+    padding: 15px;
+  }
+
+  .otp-card {
+    padding: 32px 20px;
+    border-radius: 16px;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .otp-inputs-container {
+    gap: 8px;
+  }
+
+  .otp-field {
+    width: 40px;
+    height: 50px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+
+  .verify-btn {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .resend-link, .timer-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .otp-inputs-container {
+    gap: 5px;
+  }
+
+  .otp-field {
+    width: 35px;
+    height: 45px;
+  }
+}

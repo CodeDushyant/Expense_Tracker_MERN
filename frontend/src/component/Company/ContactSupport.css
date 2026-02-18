@@ -1,0 +1,236 @@
+/* ContactSupport.css */
+
+:root {
+    --bg-color: #0b1120;
+    --card-bg: #161e2e;
+    --text-main: #ffffff;
+    --text-secondary: #94a3b8;
+    --accent-color: #383ef8;
+    --item-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Light Mode Variables */
+.light-mode {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-secondary: #64748b;
+    --accent-color: #0284c7;
+    --item-bg: #f1f5f9;
+    --border-color: #e2e8f0;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-card {
+    background: var(--card-bg);
+    max-width: 550px;
+    width: 100%;
+    padding: 50px 40px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    color: var(--text-main);
+}
+
+.intro-text {
+    color: var(--text-secondary);
+    margin-bottom: 35px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+
+.connect-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.connect-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: var(--item-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-align: left;
+}
+
+.connect-item:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+    background: rgba(56, 189, 248, 0.05);
+}
+
+.connect-item .icon {
+    font-size: 1.8rem;
+}
+
+.connect-item strong {
+    display: block;
+    color: var(--text-main);
+    font-size: 1.15rem;
+    margin-bottom: 2px;
+}
+
+.connect-item p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.response-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #10b981; /* Success Green */
+    background: rgba(16, 185, 129, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+.btn-back-home {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-back-home:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}
+
+
+/* --- About Us & Contact Support Combined Responsive Logic --- */
+
+@media (max-width: 1024px) {
+    .about-card, .contact-card {
+        max-width: 90%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* About Us Adjustments */
+    .about-card h2 {
+        font-size: 1.8rem;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .intro-text {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    /* Contact Support Adjustments */
+    .contact-card {
+        padding: 40px 25px;
+    }
+    .contact-card h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* General Wrapper */
+    .about-wrapper, .contact-wrapper {
+        padding: 15px;
+    }
+
+    /* Card Styling */
+    .about-card, .contact-card {
+        padding: 25px 20px;
+        border-radius: 18px;
+    }
+
+    /* Typography */
+    .about-card h2, .contact-card h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Contact Items */
+    .connect-item {
+        padding: 15px;
+        gap: 15px;
+    }
+    .connect-item .icon {
+        font-size: 1.5rem;
+    }
+    .connect-item strong {
+        font-size: 1rem;
+    }
+    .connect-item p {
+        font-size: 0.85rem;
+    }
+
+    /* About Us Specifics */
+    .tech-tags span {
+        padding: 5px 12px;
+        font-size: 0.75rem;
+    }
+
+    /* Common Buttons */
+    .btn-back-home {
+        width: 100%;
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+
+    /* Badges & Sections */
+    .response-badge {
+        font-size: 0.8rem;
+        padding: 5px 12px;
+        margin-bottom: 25px;
+    }
+    .tech-stack {
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 360px) {
+    .connect-item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .connect-item .icon {
+        margin-bottom: 5px;
+    }
+}

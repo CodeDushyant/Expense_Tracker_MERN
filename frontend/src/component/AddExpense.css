@@ -1,0 +1,265 @@
+.overview-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 30px;
+  padding: 40px;
+  background-color: #f8f9fc;
+}
+
+.add-card {
+  background: white;
+  width: 100%;
+  height: 450px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  border: 1px solid #f1f5f9;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* Summary Styling */
+.total-box {
+  background: #5842ff;
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.light-box {
+  background: #f8f9fc;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+.icon-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.total-box h3 { font-size: 2.25rem; font-weight: 800; }
+.amount-val { font-size: 1.5rem; font-weight: 700; }
+
+.footer-transactions {
+  margin-top: 25px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+/* Form Styling */
+.input-group { margin-bottom: 16px; }
+.input-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #4b5563; }
+.input-group input, .input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 14px;
+  background: #5842ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+
+.dark-mode .overview-grid {
+  background-color: #121214; /* Dark background */
+  padding: 40px;
+  gap: 30px;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+}
+
+.dark-mode .add-card {
+  background: #1e1e2f; /* Dark card bg */
+  border: 1px solid #374151;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  color: #e4e4e7;
+}
+
+.dark-mode .section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+/* Summary Styling */
+.dark-mode .total-box {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: #f3f4f6;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.dark-mode .light-box {
+  background: #2c2c39;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 12px;
+  color: #cbd5e1;
+}
+
+.dark-mode .icon-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  color: #a5b4fc;
+}
+
+.dark-mode .total-box h3 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #f3f4f6;
+}
+
+.dark-mode .amount-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ddd6fe;
+}
+
+.dark-mode .footer-transactions {
+  margin-top: 25px;
+  border-top: 1px solid #374151;
+  padding-top: 15px;
+  color: #94a3b8;
+}
+
+/* Form Styling */
+.dark-mode .input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #94a3b8;
+}
+
+.dark-mode .input-group input,
+.dark-mode .input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  background-color: #1f2937;
+  color: #d1d5db;
+  box-sizing: border-box;
+}
+
+.dark-mode .input-group input::placeholder,
+.dark-mode .input-group select::placeholder {
+  color: #6b7280;
+}
+
+.dark-mode .add-btn {
+  width: 100%;
+  padding: 14px;
+  background: #7c3aed; /* lighter purple */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .add-btn:hover {
+  background: #9333ea; /* hover effect */
+}
+/* --- Tablets & Laptops (Max 1024px) --- */
+@media (max-width: 1024px) {
+    .overview-grid, 
+    .dark-mode .overview-grid {
+        grid-template-columns: 1fr; /* Sidebar aur List ek ke niche ek */
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .add-card, 
+    .dark-mode .add-card {
+        max-width: 100%;
+        height: auto; /* Fixed height hata di taaki content adjust ho sake */
+        margin-bottom: 10px;
+    }
+}
+
+/* --- Mobile Phones (Max 480px) --- */
+@media (max-width: 480px) {
+    .overview-grid, 
+    .dark-mode .overview-grid {
+        padding: 15px 10px;
+    }
+
+    .add-card, 
+    .dark-mode .add-card {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    /* Summary Boxes Table view ki jagah full width */
+    .total-box h3 {
+        font-size: 1.75rem;
+    }
+
+    .amount-val {
+        font-size: 1.25rem;
+    }
+
+    /* Inputs ko touch-friendly banane ke liye */
+    .input-group input, 
+    .input-group select {
+        padding: 12px;
+        font-size: 16px; /* Mobile safari zoom prevent karne ke liye */
+    }
+
+    .add-btn {
+        padding: 16px;
+        font-size: 1rem;
+    }
+
+    /* Icons and Header alignment */
+    .icon-header {
+        font-size: 0.8rem;
+    }
+}
+
+/* --- Ultra Small Devices (Max 320px) --- */
+@media (max-width: 320px) {
+    .total-box h3 {
+        font-size: 1.5rem;
+    }
+    
+    .amount-val {
+        font-size: 1.1rem;
+    }
+}

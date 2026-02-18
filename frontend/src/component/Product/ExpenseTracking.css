@@ -1,0 +1,137 @@
+
+:root {
+    --bg-color: #0b1120;
+    --card-bg: #161e2e;
+    --text-main: #ffffff;
+    --text-secondary: #99a4b4;
+    --accent-color: #383ef8;
+    --section-bg: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme='light'], .light-mode {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-secondary: #64748b;
+    --accent-color: #0284c7;
+    --section-bg: #f1f5f9;
+}
+
+.expense-tracking-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color); 
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.expense-tracking-card {
+    background: var(--card-bg);
+    max-width: 700px;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+h2 {
+    color: var(--accent-color);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.extra-content {
+    text-align: left;
+    background: var(--section-bg);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.feature-section h3 {
+    color: var(--text-main);
+}
+
+.feature-section li {
+    color: var(--text-secondary);
+}
+
+.btn-back-home {
+    background: var(--accent-color);
+    color: white; 
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .expense-tracking-card {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    .extra-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .expense-tracking-wrapper {
+        padding: 10px;
+    }
+
+    .expense-tracking-card {
+        padding: 25px 15px;
+        border-radius: 12px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .intro-text {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .extra-content {
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+
+    .feature-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-section li {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+
+    .btn-back-home {
+        width: 100%;
+        padding: 14px;
+        font-size: 1rem;
+    }
+}

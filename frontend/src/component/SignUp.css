@@ -1,0 +1,606 @@
+/* Overlay with Glassmorphism Blur Effect */
+.signup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px); /* Image jaisa blur effect */
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal Card */
+.signup-card {
+  background: #ffffff;
+  width: 90%;
+  max-width: 440px;
+  padding: 40px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+/* Branding */
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.logo-square {
+  background-color: #5842ff;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+/* Typography */
+.signup-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.signup-subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+/* Form Styles */
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.input-box input:focus {
+  border-color: #5842ff;
+}
+
+/* Submit Button */
+.signup-btn {
+  width: 100%;
+  background-color: #5842ff;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.signup-btn:hover {
+  background-color: #4633cc;
+}
+
+/* Footer Link */
+.login-redirect {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.login-redirect a {
+  color: #5842ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+
+/* Update your CSS with these variables and dark mode logic */
+
+/* Modal Card Update */
+.signup-card {
+  /* Use variables from your landing page */
+  background: var(--lp-bg-card); 
+  width: 90%;
+  max-width: 440px;
+  padding: 40px;
+  border-radius: 16px;
+  position: relative;
+  /* Dark mode me shadow ko thoda subtle rakha hai */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-out;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Typography Fix */
+.brand-text, .signup-title {
+  color: var(--lp-text-head); /* High contrast headings */
+}
+
+.signup-subtitle, .login-redirect {
+  color: var(--lp-text-para); /* Muted paragraphs */
+}
+
+/* Close Button Fix */
+.close-btn {
+  color: var(--lp-text-para);
+}
+
+.close-btn:hover {
+  color: var(--lp-text-head);
+}
+
+/* Form Inputs Fix for Dark Mode */
+.input-box label {
+  color: var(--lp-text-head);
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 16px;
+  /* Dark mode me background transparent ya dark rakhein */
+  background-color: transparent; 
+  border: 1px solid var(--lp-border);
+  color: var(--lp-text-head); /* Input text visibility */
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+/* Input Placeholder color change */
+.input-box input::placeholder {
+  color: var(--lp-text-para);
+  opacity: 0.6;
+}
+
+.input-box input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* Submit Button visibility check */
+.signup-btn {
+  width: 100%;
+  background-color: var(--primary);
+  color: white !important; /* Hamesha white takki blue background par chamke */
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: filter 0.2s;
+}
+
+.signup-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Footer Link (Log in link) */
+.login-redirect a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+
+/* Existing variables assume ho rahi hain */
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.input-box label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0.8;
+}
+
+.input-box input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-color);
+  background: var(--row-bg);
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* 🔹 Jab error ho toh input red ho jaye */
+.input-box input.input-error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.02);
+}
+
+.input-box input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* 🔹 Warning Text Styling */
+.warning-text {
+  color: #ef4444;
+  font-size: 11px;
+  font-weight: 500;
+  margin: 4px 0 0 2px;
+  animation: fadeIn 0.3s ease;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 13px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Overlay with Glassmorphism Blur Effect */
+.signup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px); /* Image jaisa blur effect */
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal Card */
+.signup-card {
+  background: #ffffff;
+  width: 90%;
+  max-width: 440px;
+  padding: 40px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #9ca3af;
+  cursor: pointer;
+}
+
+/* Branding */
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.logo-square {
+  background-color: #5842ff;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #111827;
+}
+
+/* Typography */
+.signup-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+}
+
+.signup-subtitle {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+/* Form Styles */
+.input-box {
+  margin-bottom: 20px;
+}
+
+.input-box label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.input-box input:focus {
+  border-color: #5842ff;
+}
+
+/* Submit Button */
+.signup-btn {
+  width: 100%;
+  background-color: #5842ff;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+
+.signup-btn:hover {
+  background-color: #4633cc;
+}
+
+/* Footer Link */
+.login-redirect {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.login-redirect a {
+  color: #5842ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+
+/* Update your CSS with these variables and dark mode logic */
+
+/* Modal Card Update */
+.signup-card {
+  /* Use variables from your landing page */
+  background: var(--lp-bg-card); 
+  width: 90%;
+  max-width: 440px;
+  padding: 40px;
+  border-radius: 16px;
+  position: relative;
+  /* Dark mode me shadow ko thoda subtle rakha hai */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.3s ease-out;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Typography Fix */
+.brand-text, .signup-title {
+  color: var(--lp-text-head); /* High contrast headings */
+}
+
+.signup-subtitle, .login-redirect {
+  color: var(--lp-text-para); /* Muted paragraphs */
+}
+
+/* Close Button Fix */
+.close-btn {
+  color: var(--lp-text-para);
+}
+
+.close-btn:hover {
+  color: var(--lp-text-head);
+}
+
+/* Form Inputs Fix for Dark Mode */
+.input-box label {
+  color: var(--lp-text-head);
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 16px;
+  /* Dark mode me background transparent ya dark rakhein */
+  background-color: transparent; 
+  border: 1px solid var(--lp-border);
+  color: var(--lp-text-head); /* Input text visibility */
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+/* Input Placeholder color change */
+.input-box input::placeholder {
+  color: var(--lp-text-para);
+  opacity: 0.6;
+}
+
+.input-box input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+/* Submit Button visibility check */
+.signup-btn {
+  width: 100%;
+  background-color: var(--primary);
+  color: white !important; /* Hamesha white takki blue background par chamke */
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: filter 0.2s;
+}
+
+.signup-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Footer Link (Log in link) */
+.login-redirect a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+
+/* Existing variables assume ho rahi hain */
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.input-box label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0.8;
+}
+
+.input-box input {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-color);
+  background: var(--row-bg);
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* 🔹 Jab error ho toh input red ho jaye */
+.input-box input.input-error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.02);
+}
+
+.input-box input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* 🔹 Warning Text Styling */
+.warning-text {
+  color: #ef4444;
+  font-size: 11px;
+  font-weight: 500;
+  margin: 4px 0 0 2px;
+  animation: fadeIn 0.3s ease;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 13px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.signup-btn:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

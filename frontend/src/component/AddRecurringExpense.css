@@ -1,0 +1,283 @@
+.overview-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 30px;
+  padding: 40px;
+  background-color: #f8f9fc;
+}
+
+.recurring-add-card {
+  background: white;
+  width: 100%;
+  height: 450px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
+  border: 1px solid #f1f5f9;
+}
+
+.recurring-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* Summary Styling */
+.total-box {
+  background: #5842ff;
+  color: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.light-box {
+  background: #f8f9fc;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 12px;
+}
+
+.icon-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.total-box h3 { font-size: 2.25rem; font-weight: 800; }
+.amount-val { font-size: 1.5rem; font-weight: 700; }
+
+.footer-transactions {
+  margin-top: 25px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+/* Form Styling */
+.recurring-input-group { margin-bottom: 16px; }
+.recurring-input-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #4b5563; }
+.recurring-input-group input, .input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 14px;
+  background: #5842ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+
+.dark-mode .overview-grid {
+  background-color: #121214; /* Dark background */
+  padding: 40px;
+  gap: 30px;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+}
+
+.dark-mode .recurring-add-card {
+  background: #1e1e2f; /* Dark card bg */
+  border: 1px solid #374151;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  color: #e4e4e7;
+}
+
+.dark-mode .recurring-section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+/* Summary Styling */
+.dark-mode .total-box {
+  background: linear-gradient(135deg, #7c3aed, #a78bfa);
+  color: #f3f4f6;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.dark-mode .light-box {
+  background: #2c2c39;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 12px;
+  color: #cbd5e1;
+}
+
+.dark-mode .icon-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+  color: #a5b4fc;
+}
+
+.dark-mode .total-box h3 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #f3f4f6;
+}
+
+.dark-mode .amount-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ddd6fe;
+}
+
+.dark-mode .footer-transactions {
+  margin-top: 25px;
+  border-top: 1px solid #374151;
+  padding-top: 15px;
+  color: #94a3b8;
+}
+
+/* Form Styling */
+.dark-mode .recurring-input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #94a3b8;
+}
+
+.dark-mode .recurring-input-group input,
+.dark-mode .recurring-input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #4b5563;
+  border-radius: 8px;
+  background-color: #1f2937;
+  color: #d1d5db;
+  box-sizing: border-box;
+}
+
+.dark-mode .recurring-input-group input::placeholder,
+.dark-mode .recurring-input-group select::placeholder {
+  color: #6b7280;
+}
+
+.dark-mode .add-btn {
+  width: 100%;
+  padding: 14px;
+  background: #7c3aed; /* lighter purple */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .add-btn:hover {
+  background: #9333ea; /* hover effect */
+}
+
+
+
+/* --- Media Queries for Recurring Dashboard --- */
+
+@media (max-width: 1024px) {
+  .overview-grid, 
+  .dark-mode .overview-grid {
+    grid-template-columns: 1fr; /* Stack columns vertically */
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .recurring-add-card, 
+  .dark-mode .recurring-add-card {
+    max-width: 100%;
+    height: auto; /* Allow card to expand with content */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .total-box h3 {
+    font-size: 1.8rem;
+  }
+
+  .amount-val {
+    font-size: 1.2rem;
+  }
+
+  .recurring-section-title,
+  .dark-mode .recurring-section-title {
+    font-size: 1.15rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .overview-grid, 
+  .dark-mode .overview-grid {
+    padding: 15px 10px;
+  }
+
+  .recurring-add-card, 
+  .dark-mode .recurring-add-card {
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  /* Form Elements - Better touch targets */
+  .recurring-input-group input, 
+  .recurring-input-group select,
+  .dark-mode .recurring-input-group input,
+  .dark-mode .recurring-input-group select {
+    padding: 12px;
+    font-size: 1rem; /* Prevent auto-zoom on iOS */
+  }
+
+  .add-btn,
+  .dark-mode .add-btn {
+    padding: 16px;
+    font-size: 1rem;
+    margin-top: 5px;
+  }
+
+  /* Summary Boxes */
+  .total-box, .light-box {
+    padding: 12px;
+  }
+
+  .icon-header {
+    font-size: 0.75rem;
+  }
+
+  .footer-transactions {
+    margin-top: 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* --- Accessibility/Smallest Screens --- */
+@media (max-width: 320px) {
+  .total-box h3 {
+    font-size: 1.4rem;
+  }
+  
+  .amount-val {
+    font-size: 1rem;
+  }
+}

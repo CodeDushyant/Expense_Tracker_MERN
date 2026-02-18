@@ -1,0 +1,153 @@
+.category-card {
+  background: #f9fafb;
+  padding: 26px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+  max-width: 720px;
+  max-height: 550px;
+  overflow: auto;
+}
+
+.category-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.chart-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* legend */
+
+.legend {
+  margin-top: 20px;
+}
+
+.legend-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.legend-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.legend-amount {
+  font-weight: 600;
+  color: #111827;
+}
+
+
+
+.dark-mode .category-card {
+  background: #1f2937; /* Dark slate */
+  border: 1px solid #374151; /* Darker border */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.8);
+  max-width: 720px;
+  color: #e4e4e7;
+}
+
+.dark-mode .category-card h2 {
+  color: #cbd5e1; /* Light gray text */
+}
+
+.dark-mode .chart-wrap {
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Legend */
+
+.dark-mode .legend {
+  margin-top: 20px;
+}
+
+.dark-mode .legend-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #374151; /* Optional separator */
+}
+
+.dark-mode .legend-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+/* Colored dot backgrounds can stay same or be slightly adjusted */
+.dark-mode .dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  /* optionally add border to make them visible in dark */
+  border: 1px solid #555;
+}
+
+/* Legend amount text */
+.dark-mode .legend-amount {
+  font-weight: 600;
+  color: #e4e4e7;
+}
+
+
+@media (max-width: 768px) {
+  .category-card,
+  .dark-mode .category-card {
+    max-width: 100%;
+    max-height: none;
+    padding: 20px 16px;
+  }
+
+  .category-card h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .chart-wrap {
+    margin: 15px 0;
+  }
+
+  /* Pie chart scaling for mobile screens */
+  .chart-wrap canvas {
+    max-width: 220px !important;
+    max-height: 220px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .legend-row {
+    padding: 10px 0;
+  }
+
+  .legend-left {
+    font-size: 14px;
+    gap: 8px;
+  }
+
+  .legend-amount {
+    font-size: 14px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+}
