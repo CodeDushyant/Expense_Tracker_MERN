@@ -4,20 +4,21 @@ const sendEmail = async (to, subject, html) => {
   console.log("Attempting to send email to:", to);
   
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true, // Port 465 ke liye true
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, // Yahan 16-digit App Password hona chahiye
-      },
-      tls: {
-        // Ye line deployment errors ko avoid karne mein help karti hai
-        rejectUnauthorized: false
-      }
-    });
+   const transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+  port: 587,
+  pool: true,
+  secure: false, // 587 ke liye false zaroori hai
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
+  tls: {
+    rejectUnauthorized: false, // Ye certificate errors ko bypass karega
+    minVersion: "TLSv1.2"
+  },
+  connectionTimeout: 10000, // 10 seconds baad timeout (taaki request atki na rahe)
+});
 
     // 1. Verify connection first
     await transporter.verify();
