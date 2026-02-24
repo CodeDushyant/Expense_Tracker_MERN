@@ -53,7 +53,7 @@ exports.usersController = async (req, res) => {
       existUser.otp = otp;
 
       await existUser.save();
-      sendMail(email, "Your OTP Code", otpTemplate(otp, name))
+      await sendMail(email, "Your OTP Code", otpTemplate(otp, name))
   .then(() => console.log("OTP email sent"))
   .catch(err => console.error("OTP email failed:", err));
 
@@ -77,7 +77,7 @@ exports.usersController = async (req, res) => {
       otpExpiry: new Date(Date.now() + 5 * 60 * 1000),
       isVerified: false,
     });
-   sendMail(email, "Your OTP Code", otpTemplate(otp, name))
+  await sendMail(email, "Your OTP Code", otpTemplate(otp, name))
   .then(() => console.log("OTP email sent"))
   .catch(err => console.error("OTP email failed:", err));
 
@@ -134,7 +134,7 @@ exports.resendOtp = async (req, res) => {
     existingUser.otpExpiry = new Date(Date.now() + 5 * 60 * 1000);
     await existingUser.save();
     const name = existingUser.name;
-   sendMail(email, "Your OTP Code", otpTemplate(otp, name))
+  await sendMail(email, "Your OTP Code", otpTemplate(otp, name))
   .then(() => console.log("OTP email sent"))
   .catch(err => console.error("OTP email failed:", err));
 
@@ -151,3 +151,4 @@ exports.resendOtp = async (req, res) => {
     });
   }
 };
+
