@@ -1,0 +1,191 @@
+/* AboutUs.css */
+
+:root {
+    --bg-color: #0b1120;
+    --card-bg: #161e2e;
+    --text-main: #ffffff;
+    --text-secondary: #94a3b8;
+    --accent-color: #383ef8;
+    --section-bg: rgba(255, 255, 255, 0.05);
+}
+
+.light-mode {
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-secondary: #64748b;
+    --accent-color: #0284c7;
+    --section-bg: #f1f5f9;
+}
+
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.about-card {
+    background: var(--card-bg);
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    color: var(--text-main);
+}
+
+.about-card h2 {
+    color: var(--accent-color);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+    .about-grid { grid-template-columns: 1fr; }
+}
+
+.about-section h3 {
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.about-section p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+}
+
+.about-list li {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.tech-stack {
+    border-top: 1px solid var(--section-bg);
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tech-stack h4 {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.tech-tags {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tech-tags span {
+    background: var(--section-bg);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.btn-back-home {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-back-home:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+}
+
+/* --- Tablets and Small Laptops (Max 1024px) --- */
+@media (max-width: 1024px) {
+    .about-card {
+        max-width: 90%;
+        padding: 30px;
+    }
+}
+
+/* --- Mobile Landscape & Large Phones (Max 768px) --- */
+@media (max-width: 768px) {
+    .about-card h2 {
+        font-size: 1.8rem; /* Font thoda chota */
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr; /* 2 columns se 1 column */
+        gap: 20px;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+}
+
+/* --- Small Phones (Max 480px) --- */
+@media (max-width: 480px) {
+    .about-wrapper {
+        padding: 15px; /* Kam space side mein */
+    }
+
+    .about-card {
+        padding: 25px 20px;
+        border-radius: 18px; /* Sharp corners mobile pe acche lagte hain */
+    }
+
+    .about-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .tech-tags {
+        gap: 8px; /* Tags ke beech space kam */
+    }
+
+    .tech-tags span {
+        padding: 5px 12px;
+        font-size: 0.75rem;
+    }
+
+    .btn-back-home {
+        width: 100%; /* Full width button mobile pe touch-friendly hota hai */
+        padding: 14px;
+    }
+
+    /* Padding adjustments for sections */
+    .tech-stack {
+        padding-top: 20px;
+        margin-bottom: 20px;
+    }
+}

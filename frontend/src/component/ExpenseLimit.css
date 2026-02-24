@@ -1,0 +1,226 @@
+.el-container {
+  padding: 24px;
+}
+
+.el-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.el-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.el-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.el-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.el-amount {
+  font-size: 24px;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.el-spent {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.el-progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.el-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #a5b4fc);
+}
+
+.el-percent {
+  text-align: right;
+  font-size: 13px;
+  margin-top: 6px;
+  color: #6b7280;
+}
+
+.el-input-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.el-input-row input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.el-input-row button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.el-input-row button:hover {
+  background: #4f46e5;
+}
+
+/* 🌙 DARK MODE */
+
+.dark-mode .el-title {
+  color: #f3f4f6;
+}
+
+.dark-mode .el-card {
+  background: #1e1e2f;
+}
+
+.dark-mode .el-label {
+  color: #9ca3af;
+}
+
+.dark-mode .el-amount {
+  color: #a5b4fc;
+}
+
+.dark-mode .el-progress-bar {
+  background: #2d2d4d;
+}
+
+.dark-mode .el-input-row input {
+  background: #2d2d4d;
+  border: 1px solid #3c3c55;
+  color: white;
+}
+
+.dark-mode .el-percent {
+  color: #9ca3af;
+}
+
+
+.el-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.el-tab {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #eef2ff;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.el-tab.active {
+  background: #6366f1;
+  color: white;
+}
+
+/* 🌙 DARK MODE */
+.dark-mode .el-tab {
+  background: #2d2d4d;
+  color: #c7d2fe;
+}
+
+.dark-mode .el-tab.active {
+  background: #a5b4fc;
+  color: #1e1e2f;
+}
+
+
+@media (max-width: 768px) {
+  .el-container {
+    padding: 16px;
+  }
+
+  .el-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .el-card {
+    padding: 16px;
+  }
+
+  .el-amount, 
+  .el-spent {
+    font-size: 18px;
+  }
+
+  .el-tabs {
+    overflow-x: auto;
+    padding-bottom: 5px;
+    scrollbar-width: none;
+  }
+
+  .el-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .el-tab {
+    white-space: nowrap;
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .el-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .el-input-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .el-input-row input {
+    width: 100%;
+  }
+
+  .el-input-row button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .el-progress-bar {
+    height: 8px;
+  }
+
+  .el-label {
+    font-size: 12px;
+  }
+
+  .el-percent {
+    font-size: 11px;
+  }
+}

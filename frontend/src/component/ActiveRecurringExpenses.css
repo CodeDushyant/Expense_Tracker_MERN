@@ -1,0 +1,384 @@
+/* --- Global Variables for Unified Theme Support --- */
+:root {
+  /* Light Mode - Clean & Minimal */
+  --card-bg: #ffffff;
+  --row-bg: #f8fafc;
+  --row-hover: #f1f5f9;
+  --border-color: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --accent-blue: #4f46e5;
+  --accent-green: #10b981;
+  --accent-red: #ef4444;
+  --modal-overlay: rgba(15, 23, 42, 0.3);
+  --modal-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark-mode {
+  /* Dark Mode - Professional Deep Slate */
+  --card-bg: #1e293b;
+  --row-bg: #0f172a;
+  --row-hover: #1e293b;
+  --border-color: #334155;
+  --text-main: #f8fafb;
+  --text-muted: #94a3b8;
+  --accent-blue: #6366f1;
+  --accent-green: #22c55e;
+  --accent-red: #fb7185;
+  --modal-overlay: rgba(0, 0, 0, 0.6);
+  --modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Main Container --- */
+.ar-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+}
+
+.ar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.ar-heading {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.ar-info-text {
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--accent-blue);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  border-left: 4px solid var(--accent-blue);
+}
+
+/* --- List & Rows --- */
+.ar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  flex: 1;
+  padding-right: 8px;
+}
+
+.ar-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: var(--row-bg);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ar-row:hover {
+  background: var(--row-hover);
+  border-color: var(--accent-blue);
+  transform: translateX(4px);
+}
+
+.ar-title {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--text-main);
+}
+
+.ar-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.ar-amount {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+/* --- Buttons Styling --- */
+.ar-update-btn {
+  background: var(--accent-blue);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ar-update-btn:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+}
+
+.ar-paid-btn {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  padding: 8px;
+  border-radius: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.ar-paid-btn.ar-done {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  color: white;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+}
+
+.ar-delete-btn {
+  background: rgba(239, 68, 68, 0.08);
+  color: var(--accent-red);
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ar-delete-btn:hover {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+/* --- PAID STATUS (IDENTIFICATION) --- */
+.ar-paid-row {
+  opacity: 0.6;
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px dashed var(--text-muted) !important;
+  filter: grayscale(0.5);
+}
+
+.ar-paid-row .ar-title {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+/* --- Modal Styling --- */
+.ar-modal {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.ar-modal-content {
+  background: var(--card-bg);
+  padding: 32px;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--modal-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid var(--border-color);
+  animation: modalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ar-modal-content h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.ar-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ar-input-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ar-modal-content input {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  background: var(--row-bg);
+  color: var(--text-main);
+  transition: 0.2s;
+}
+
+.ar-modal-content input:focus {
+  border-color: var(--accent-blue);
+  background: var(--card-bg);
+}
+
+.ar-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.ar-modal-actions button:first-child {
+  flex: 2;
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ar-modal-actions button:last-child {
+  flex: 1;
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- Scrollbar Customization --- */
+.ar-list::-webkit-scrollbar {
+  width: 4px;
+}
+.ar-list::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
+
+/* --- Animations --- */
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  /* 1. Main Card Adjustment */
+  .ar-card {
+    width: 95%;
+    padding: 20px;
+    height: auto; /* Fixed height mobile pe problematic hoti hai */
+    min-height: 500px;
+    margin: 10px auto;
+  }
+
+  .ar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* 2. List Row Transformation */
+  .ar-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .ar-row:hover {
+    transform: none; /* Mobile pe hover effect annoying lagta hai */
+  }
+
+  /* 3. Right Section (Amount & Buttons) */
+  .ar-right {
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .ar-amount {
+    font-size: 1.1rem;
+  }
+
+  /* 4. Modal Specifics */
+  .ar-modal-content {
+    width: 90%;
+    padding: 24px;
+    gap: 15px;
+  }
+
+  .ar-modal-actions {
+    flex-direction: column-reverse; /* Cancel niche, Save upar */
+  }
+
+  .ar-modal-actions button {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ar-heading {
+    font-size: 1.2rem;
+  }
+
+  .ar-info-text {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .ar-title {
+    font-size: 15px;
+  }
+
+  .ar-update-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  /* Stack buttons on very small screens if needed */
+  .ar-right {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

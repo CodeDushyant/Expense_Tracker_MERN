@@ -1,0 +1,243 @@
+/* Modal Overlay - Background blur aur dimming */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+
+/* Main Login Card */
+.login-card {
+  /* Navbar wale variables use kiye hain */
+  background-color: var(--bg-nav); 
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  /* Dark mode me shadow ko thoda subtle rakha hai */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: var(--text-sub);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: var(--text-head);
+}
+
+.brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.logo-box {
+  background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text-head);
+}
+
+/* Yahan fix hai "Welcome back" ke liye */
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-head); 
+  margin: 0 0 8px 0;
+}
+
+.subtitle {
+  color: var(--text-sub);
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-head);
+  margin-bottom: 8px;
+}
+
+/* Input styles dark mode compatible */
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: transparent;
+  border: 1px solid var(--border-nav);
+  color: var(--text-head);
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #5842ff;
+  box-shadow: 0 0 0 3px rgba(88, 66, 255, 0.15);
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #5842ff;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+  background-color: #4633cc;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+.signup-text {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: var(--text-sub);
+}
+
+.signup-text a {
+  color: #5842ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px; /* adjust as per your theme */
+}
+
+.forgot-password-link {
+  font-size: 16px;
+  color: #4f46e5; /* matches your primary blue/indigo */
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Ensure password label has no extra margin since it's now in label-row */
+.form-group label {
+  margin-bottom: 0; 
+}
+
+
+@media (max-width: 768px) {
+  .login-card {
+    max-width: 90%;
+    padding: 30px 24px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 16px;
+    align-items: flex-end; /* Mobile par card niche se slide hone wala feel dega */
+  }
+
+  .login-card {
+    max-width: 100%;
+    padding: 32px 20px;
+    border-radius: 20px 20px 0 0; /* Bottom sheet look */
+    margin-bottom: -16px; /* Overlay padding offset */
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .close-btn {
+    top: 12px;
+    right: 12px;
+  }
+
+  .brand-header {
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+
+  .title, .subtitle {
+    text-align: center;
+  }
+
+  .form-group input {
+    padding: 14px; /* Touch target bada karne ke liye */
+    font-size: 16px; /* iOS zoom prevent karne ke liye */
+  }
+
+  .label-row {
+    flex-direction: row;
+    font-size: 14px;
+  }
+
+  .forgot-password-link {
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 16px;
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}

@@ -1,0 +1,219 @@
+/* ================= CONTAINER ================= */
+
+.recurring-card-container {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  padding: 24px;
+  border-radius: 18px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ================= HEADER ================= */
+
+.recurring-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.recurring-icon {
+  opacity: 0.9;
+}
+
+.recurring-title {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.recurring-subtitle {
+  font-size: 14px;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ================= AMOUNT WRAPPER ================= */
+
+.recurring-amount-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+/* ================= AMOUNT BOX ================= */
+
+.recurring-estimate-box {
+  flex: 1;
+  height: 130px;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 18px 22px;
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(4px);
+  box-sizing: border-box;
+  transition: 0.3s ease;
+}
+
+/* left box slightly highlighted */
+
+.left-box {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ================= LABEL ================= */
+
+.estimate-label {
+  font-size: 13px;
+  font-weight: 500;
+  height: 18px;
+  line-height: 18px;
+  margin-bottom: 10px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0.9;
+}
+
+/* ================= VALUE ================= */
+
+.estimate-value {
+  font-size: 32px !important;
+  font-weight: 800;
+  line-height: 32px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+}
+
+/* ================= HOVER EFFECT ================= */
+
+.recurring-estimate-box:hover {
+  transform: translateY(-3px);
+}
+
+/* ================= DARK MODE ================= */
+
+.dark-mode .recurring-card-container {
+  background: linear-gradient(135deg, #4c1d95, #2e1065);
+  color: #f5f3ff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .recurring-subtitle {
+  color: #c4b5fd;
+}
+
+.dark-mode .recurring-estimate-box {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.dark-mode .left-box {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.dark-mode .estimate-label {
+  color: #c4b5fd;
+}
+
+.dark-mode .estimate-value {
+  color: #ffffff;
+  font-size: 32px !important;
+  text-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+}
+
+.dark-mode .recurring-icon {
+  filter: drop-shadow(0 0 5px rgba(167, 139, 250, 0.5));
+  opacity: 1;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .recurring-amount-wrapper {
+    flex-direction: column;
+  }
+
+  .recurring-estimate-box {
+    height: 120px;
+  }
+
+  .estimate-value {
+    font-size: 28px !important;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .recurring-card-container {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .recurring-title {
+    font-size: 18px;
+  }
+
+  .recurring-subtitle {
+    font-size: 13px;
+  }
+
+  .recurring-amount-wrapper {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .recurring-estimate-box {
+    height: 100px;
+    padding: 15px 18px;
+  }
+
+  .estimate-value {
+    font-size: 26px !important;
+    line-height: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recurring-card-container {
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  .recurring-title-row {
+    gap: 10px;
+  }
+
+  .recurring-estimate-box {
+    height: 90px;
+  }
+
+  .estimate-label {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .estimate-value {
+    font-size: 24px !important;
+  }
+
+  .recurring-estimate-box:hover {
+    transform: none;
+  }
+}

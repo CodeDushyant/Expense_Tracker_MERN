@@ -1,0 +1,325 @@
+.reset-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 20px;
+}
+
+.reset-card {
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-badge {
+  width: 60px;
+  height: 60px;
+  background: rgba(79, 70, 229, 0.1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.reset-header h2 {
+  font-size: 24px;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.reset-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.reset-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.reset-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reset-input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  padding-left: 4px;
+}
+
+.reset-input-group input {
+  padding: 14px;
+  border-radius: 14px;
+  border: 2px solid var(--border-color);
+  background: var(--row-bg);
+  color: var(--text-main);
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.reset-input-group input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Password eye positioning */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.error-msg {
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.reset-submit-btn {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.reset-submit-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+}
+
+.back-to-forgot {
+  background: none;
+  border: none;
+  color: var(--accent-blue);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 25px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Existing CSS same rahegi, bas ye add kar lo */
+
+.animate-fade {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Step 2 highlight */
+.reset-card:has(.animate-fade) {
+  border-color: var(--accent-green);
+  transition: border 0.5s;
+}
+
+.reset-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 20px;
+}
+
+.reset-card {
+  background: var(--card-bg);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-badge {
+  width: 60px;
+  height: 60px;
+  background: rgba(79, 70, 229, 0.1);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.reset-header h2 {
+  font-size: 24px;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.reset-header p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.reset-form {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.reset-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reset-input-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+  padding-left: 4px;
+}
+
+.reset-input-group input {
+  padding: 14px;
+  border-radius: 14px;
+  border: 2px solid var(--border-color);
+  background: var(--row-bg);
+  color: var(--text-main);
+  font-size: 16px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.reset-input-group input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+/* Password eye positioning */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-input-wrapper input {
+  width: 100%;
+  padding-right: 45px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.error-msg {
+  color: #ef4444;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.reset-submit-btn {
+  background: var(--accent-blue);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.reset-submit-btn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+}
+
+.back-to-forgot {
+  background: none;
+  border: none;
+  color: var(--accent-blue);
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 25px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Existing CSS same rahegi, bas ye add kar lo */
+
+.animate-fade {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Step 2 highlight */
+.reset-card:has(.animate-fade) {
+  border-color: var(--accent-green);
+  transition: border 0.5s;
+}

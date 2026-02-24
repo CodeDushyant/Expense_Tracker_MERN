@@ -1,0 +1,132 @@
+/* Cookies.css */
+
+.cookies-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.cookies-card {
+    background: var(--card-bg);
+    max-width: 650px;
+    width: 100%;
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    color: var(--text-main);
+}
+
+.intro-text {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cookies-content {
+    text-align: left;
+    margin-bottom: 40px; /* Space between content and button */
+}
+
+.cookie-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.cookie-section h3 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.cookie-section p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Button Alignment */
+.button-container {
+    margin-top: 20px;
+}
+
+.btn-back-home {
+    background: #444cf7; /* Matching your Status button color */
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-back-home:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+    .cookies-wrapper {
+        padding: 15px;
+    }
+
+    .cookies-card {
+        padding: 35px 25px;
+        max-width: 90%;
+    }
+
+    .cookies-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .cookie-section {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cookies-wrapper {
+        padding: 10px;
+    }
+
+    .cookies-card {
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+
+    .cookies-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .cookie-section h3 {
+        font-size: 1.1rem;
+    }
+
+    .cookie-section p {
+        font-size: 0.85rem;
+    }
+
+    .cookies-content {
+        margin-bottom: 30px;
+    }
+
+    .btn-back-home {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
