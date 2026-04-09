@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 
 const LoginModal = ({ isOpen , setLogedin ,setUser }) => {
   const navigate = useNavigate();
-  const API = `${import.meta.env.vite_api_base_url}/api/v1/user/login`;
+  const API = `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/login`;
 
   const { register, handleSubmit } = useForm();
 

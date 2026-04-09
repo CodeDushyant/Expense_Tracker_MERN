@@ -19,7 +19,7 @@ const MonthlyView = () => {
     const fetchMonthly = async () => {
       try {
         const res = await axios.get(
-          `${import.meta.env.vite_api_base_url}/api/v1/monthlyExpense`,
+          `${import.meta.env.VITE_API_BASE_URL}/api/v1/monthlyExpense`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
 

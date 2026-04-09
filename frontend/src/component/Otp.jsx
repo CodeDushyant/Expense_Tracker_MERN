@@ -59,7 +59,7 @@ const Otp = ({ setLogedin }) => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.vite_api_base_url}/api/v1/user/otpverify`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/v1/user/otpverify`,
         { otp: finalOtp, userId: userID }
       );
 

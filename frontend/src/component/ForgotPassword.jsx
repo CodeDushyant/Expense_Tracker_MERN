@@ -12,7 +12,7 @@ const ForgotPassword = () => {
   const onSubmit = async (data) => {
     try {
       // API call to updatePassword/send OTP
-      const res = await axios.post(`${import.meta.env.vite_api_base_url}/api/v1/user/updatePassword`, data);
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/updatePassword`, data);
       
       if (res.data.success) {
         // 🔹 Yahan hum data save kar rahe hain

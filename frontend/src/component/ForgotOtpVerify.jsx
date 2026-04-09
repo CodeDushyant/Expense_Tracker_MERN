@@ -18,7 +18,7 @@ const ForgotOtpVerify = () => {
   const handleVerifyOtp = async (data) => {
     try {
       const userId = localStorage.getItem("userId");
-      const res = await axios.post(`${import.meta.env.vite_api_base_url}/api/v1/user/verifyOtpforResetPassword`, {
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/verifyOtpforResetPassword`, {
         userId: userId,
         otp: data.otp
       });
@@ -35,7 +35,7 @@ const ForgotOtpVerify = () => {
   // --- Step 2: Reset Password ---
   const handleResetPassword = async (data) => {
     try {
-      const res = await axios.post(`${import.meta.env.vite_api_base_url}/api/v1/user/resetPassword`, 
+      const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/resetPassword`, 
         { newPassword: data.newPassword }, 
         { headers: { Authorization: `Bearer ${otpToken}` } } 
       );
